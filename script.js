@@ -1,7 +1,7 @@
 import { OrbitControls } from "https://unpkg.com/three@0.120.0/examples/jsm/controls/OrbitControls";
 
-var card_front = "../img/card_front.png"
-var card_back = "../img/card_back.png"
+var card_front = "img/card_front.png"
+var card_back = "img/card_back.png"
 
 
 var scene,
