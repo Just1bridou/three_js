@@ -95,3 +95,23 @@ function animate() {
 function render() {
   renderer.render( scene, camera );
 }
+
+function mapImage(url, cb) {
+  var img = new Image()
+  var canvas = document.createElement("canvas"),
+  ctx = canvas.getContext("2d")
+
+  img.crossOrigin = "Anonymous";
+
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage( img, 0, 0 );
+
+    var mat=new THREE.MeshBasicMaterial();
+    mat.map = new THREE.CanvasTexture(canvas);
+
+    cb(mat)
+  }
+  img.src = url;
+}
